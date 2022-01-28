@@ -1,16 +1,18 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #202020;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
+  border-radius: 50%;
+  margin: 3vw;;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 2s linear;
+    animation: App-logo-spin infinite 4s linear;
   }
 }
 
@@ -35,4 +37,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.title{
+  font-size: 4vw;
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: rgb(102, 7, 47);
 }

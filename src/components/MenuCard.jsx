@@ -1,11 +1,11 @@
 import React from "react";
 
-const Login=()=>{
+const MenuCard=()=>{
     return(
         <div>
-            <h1>login</h1>
+
         </div>
     );
 }
 
-export default Login;
+export default MenuCard;

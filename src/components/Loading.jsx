@@ -1,11 +1,11 @@
 import React from "react";
-import logo from '../sources/logo.svg';
+import "../sources/shop_image.jpg"
 
 const Loading =()=>{
     return(
         <div>
 
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src= {require("../sources/shop_image.jpg")} className="App-logo" alt="logo" />
         <p>LOADING...</p>
     
         </div>
