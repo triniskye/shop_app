@@ -7,13 +7,15 @@ import NavBar from "./NavBar";
 const Home=()=>{
     const [loaded, setLoaded] = useState(false)
     
-    useState(()=>{
+    useEffect(()=>{
         setLoaded(true)
     }, [])
 
     return(
         <div>
-            <NavBar/>
+            <div className="nav">
+                <NavBar/>
+            </div>
            {loaded? <h1 className="title">Harrisville News and General Store</h1> : <Loading/> }
            
 

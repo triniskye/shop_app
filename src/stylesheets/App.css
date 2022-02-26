@@ -20,8 +20,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -43,4 +42,7 @@
   font-size: 4vw;
   -webkit-text-stroke: 1px white;
   -webkit-text-fill-color: rgb(102, 7, 47);
+}
+.nav{
+  top: 0;
 }
