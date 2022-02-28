@@ -1,4 +1,5 @@
-import React, { useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
+import Loading from "./Loading";
 import NavBar from "./NavBar";
 import MenuCard from "./MenuCard";
 
@@ -24,11 +25,12 @@ const Menu=()=>{
         }
     }, []);
 
-
     return(
         
         <div>
-            <NavBar/>
+            <div className="nav">
+                <NavBar/>
+            </div>
             <h1 className="title">Menu</h1>
  
             

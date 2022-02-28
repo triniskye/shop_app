@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from "react";
 import NavBar from "./NavBar";
 
-const Account=()=>{
+
+export default function About(){
+    
+    
     return(
         <div>
             <div className="nav">
                 <NavBar/>
             </div>
-            <h1 className="title">Account</h1>
+            <h1 className="title">About</h1>
         </div>
-    );
+    )
 }
-
-export default Account;
