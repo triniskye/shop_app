@@ -11,20 +11,21 @@ import Account from '../components/Account';
 import About from '../components/About';
 
 function App() {
-  const [loaded, setLoaded] = useState(false)
+  // const [loaded, setLoaded] = useState(false)
     
-  useEffect(()=>{
-      setLoaded(true)
-  }, [])
+  // useEffect(()=>{
+  //     setLoaded(true)
+  // }, [])
+
   return (
     <div className="App">
-      {loaded == false? <Loading/> : 
+ 
       <div className="App-content">
         <Router> 
 
-          <Routes>
+          <Routes>                                                                                            
 
-            <Route exact path="/" element={<Home/>}/>
+            <Route exact path="/" element={<Home />}/>
 
             <Route path="/menu" element={<Menu/>}/>
 
@@ -43,7 +44,7 @@ function App() {
 
         </Router>
       </div>
-    }
+
     </div>
   );
 }

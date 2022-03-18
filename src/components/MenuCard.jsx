@@ -1,11 +1,20 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
-const MenuCard=({item, price, type})=>{
+
+const MenuCard=({title, price, food_type, ingredients, img_source})=>{
+    
+
+  
     return(
         <div>
-            <h1>{item}</h1>
-            <h3>{price}</h3>
-            <p>{type}</p>
+            
+            <div>
+                <h1>{title}</h1>
+                <h3>{price}</h3>
+                <p>{food_type}</p>
+            </div>
+        
+        
         </div>
     );
 }
