@@ -11,7 +11,7 @@ const Signup = (props) => {
 
     function submitForm(e) {
         e.preventDefault()
-        props.setStatus(true)
+       
         fetch('http://localhost:5000/signup', {
         method: "POST",
         body: JSON.stringify({

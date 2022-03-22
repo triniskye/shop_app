@@ -6,10 +6,9 @@ const Login=(props)=>{
     const nav = useNavigate()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    let error = ""
     function submitForm(e){
         e.preventDefault()
-        props.setStatus(true)
         fetch('http://localhost:5000/login', {
             method: "POST",
             body: JSON.stringify({
@@ -22,10 +21,13 @@ const Login=(props)=>{
             .then(json => {
                 console.log(json);
                 props.setNewUser(json);
+                nav("/")
             })
-            .catch(err => console.log(err)
-            );
-        nav("/")
+            .catch(err => {
+                console.log(err)
+                error = err
+            });
+        
     }
     function handleEmail(e){
         setEmail(e.target.value)
@@ -37,6 +39,7 @@ const Login=(props)=>{
         <div>
             <h1>login</h1>
             <button className="backButton">Back</button>
+            <h2 style={{backgroundColor: "red"}}>{error}</h2>
             <form onSubmit={submitForm}>
                 <label>Email:</label><br/>
                 <input type="email" placeholder="gbostock@emailprovider.com" onChange={handleEmail}></input><br/>

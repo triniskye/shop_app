@@ -17,13 +17,21 @@ const [user, setUser] = useState([])
 console.log("hello")
 
 function setNewUser(newUserArr){
-  setUser(newUserArr);
-  console.log("user",newUserArr)
+  setUser(newUserArr.user);
+  console.log("user",newUserArr.user)
+  setLoggedIn(true)
 }
 
-function changeLoggedInStatus(status){
-  setLoggedIn(status)
-}
+useEffect(() => {
+  const userData = window.localStorage.getItem('my_app_user')
+  setUser(JSON.parse(userData));
+  console.log("reload", userData)
+}, []);
+
+useEffect(() => {
+  window.localStorage.setItem('my_app_user', JSON.stringify(user));
+  console.log("updated state", user)
+}, [user]);
 
 
   return (
@@ -31,7 +39,7 @@ function changeLoggedInStatus(status){
  
       <div className="App-content">
       <div className="nav">
-        <NavBar status = {loggedIn}/>
+        <NavBar user={user}/>
       </div>
         <Router> 
 
@@ -43,9 +51,9 @@ function changeLoggedInStatus(status){
 
             <Route path="/contact" element={<Contact/>}/>
 
-            <Route path="/signup" element={<Signup setNewUser = {setNewUser} setStatus = {changeLoggedInStatus}/>}/>
+            <Route path="/signup" element={<Signup setNewUser = {setNewUser} />}/>
 
-            <Route path="/login" element={<Login setNewUser = {setNewUser} setStatus = {changeLoggedInStatus}/>}/>
+            <Route path="/login" element={<Login setNewUser = {setNewUser} />}/>
 
             <Route exact path="/about" element={<About/>}/>
 
