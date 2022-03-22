@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap";
 
-const NavBar = ({loggedIn}) => {
-
+function NavBar(props){
+    const [loggedIn, setLoggedIn] = useState(false)
 
     return (
         <div>
@@ -17,7 +17,7 @@ const NavBar = ({loggedIn}) => {
                             <Nav.Link href="/contact">Contact Us</Nav.Link>
                             <Nav.Link href="/about">About</Nav.Link>
                             <NavDropdown title="Account" id="basic-nav-dropdown">
-                                {loggedIn ?
+                                {loggedIn === true ?
                                     <NavDropdown.Item href="/account">Overview</NavDropdown.Item>
                                     :
                                     <NavDropdown.Item href="/login">Login/Signup</NavDropdown.Item>

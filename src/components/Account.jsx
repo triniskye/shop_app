@@ -1,13 +1,12 @@
 import React, {useState, useEffect} from "react";
-import NavBar from "./NavBar";
 
-const Account=()=>{
+const Account=(props)=>{
+    console.log(props)
     return(
         <div>
-            <div className="nav">
-                <NavBar/>
-            </div>
+
             <h1 className="title">Account</h1>
+            
         </div>
     );
 }

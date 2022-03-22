@@ -1,17 +1,20 @@
 import React, {useEffect, useState} from "react";
 
 
-const MenuCard=({title, price, food_type, ingredients, img_source})=>{
-    
+const MenuCard=(props)=>{
+ 
 
-  
     return(
         <div>
             
-            <div>
-                <h1>{title}</h1>
-                <h3>{price}</h3>
-                <p>{food_type}</p>
+            <div className="card" style={{backgroundColor : "rgb(184, 63, 93)", borderRadius: "15%"}}>
+                <img className="cardImage"src={props.items.img_source}></img>
+                <p>{props.items.title}</p>
+                <p>${props.items.price}</p>
+                <button className="viewButton">View</button>
+                <div style={{fontSize: "1vw"}}>
+                {props.items.available ? <p>Available✔️</p> : <p>Not Available❌</p>}
+                </div>
             </div>
         
         
