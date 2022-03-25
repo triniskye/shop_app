@@ -32,7 +32,7 @@ useEffect(() => {
   window.localStorage.setItem('my_app_user', JSON.stringify(user));
   console.log("updated state", user)
 }, [user]);
-
+ 
 
   return (
     <div className="App">

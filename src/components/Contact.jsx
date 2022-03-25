@@ -10,7 +10,7 @@ const Contact=()=>{
                 <div className="contactImageContainer">
                     <img className="contactImage" src="https://lh3.googleusercontent.com/p/AF1QipPkcnP5kRRoWw42nq2SSIQb-aK3X7TQbOOTOLg0=s1600-w400"/>
                 </div>
-                <div className="details">
+                <div className="contactDetails">
                     <p>PHONE: (07) 5467 1255</p>
                     <p>ADDRESS: 37 Queen St, Harrisville QLD 4307</p>
                 </div>

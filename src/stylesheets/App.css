@@ -4,6 +4,7 @@ html{
 .App {
   text-align: center;
   background-color: #202020;
+  font-size: 1vw;
   
 }
 
@@ -22,8 +23,9 @@ html{
 .App-content {
   text-align: center;
   min-height: 100vh;
-  width: 100vw;
   color: white;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 
@@ -42,10 +44,22 @@ html{
   -webkit-text-stroke: 1px white;
   -webkit-text-fill-color: rgb(102, 7, 47);
 }
+.title-left{
+  font-size: 4vw;
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: rgb(102, 7, 47);
+  margin-left: 1vw;
+  text-align: left;
+}
+.title-left img{
+  width: 4vw;
+  height: 4vw;
+}
 .nav{
   top: 0;
   width: 100vw;
   background-color: rgb(248, 242, 232);
+  font-size: 1.20vw;
 }
 .cardsArea{
   display: grid;
@@ -53,19 +67,30 @@ html{
 
 }
 .card{
-  border-radius: 50%;
-  font-size: 2vw;
-  padding: 2vw;
+  margin: 0.5vw;
+  font-size: 1vw;
+  padding-top: 2vw;
   color: aliceblue ;
+  width: 18vw;
+  height: 12vw;
+  box-shadow: 0.5vw 0.5vw 0.5vw rgb(97, 97, 100);
+  
+}
+.card:hover{
+  animation: grow 1.5s linear;
 }
 .cardImage{
   align-self: center;
-  width: 5vw;
-  height: 5vw;
+  width: 2vw;
+  height: 2vw;
 }
 .viewButton{
-  width: 70%;
+  border-radius: 5%;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  border-style: none;
   align-self: center;
+  background-color:rgb(240, 194, 208);
 }
 input{
   width: 30vw;
@@ -79,7 +104,8 @@ input{
   display: grid;
   grid-template-columns: 50vw 50vw;
 }
-.details{
+
+.contactDetails{
   grid-column-start: 2;
   text-align: left;
   margin-top: 5vh;
@@ -89,5 +115,23 @@ input{
 }
 .userDetails{
   display: grid;
-  grid-template-columns: 25vw 25vw 25vw 25vw;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
+}
+.accountHeaders{
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+}
+.details{
+  grid-column-start: 1;
+}
+
+@keyframes grow{
+  0%{
+    box-shadow: 0.5vw 0.5vw 0.5vw rgb(97, 97, 100);
+    
+  }
+  100%{
+    box-shadow:1vw 1vw 1vw rgb(97, 97, 100);
+    width: 18.5vw;
+  }
 }
