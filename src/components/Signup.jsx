@@ -26,6 +26,7 @@ const Signup = (props) => {
         .then((json) => {
             console.log(json);
             props.setNewUser(json);
+            props.setToken(json.jwt);
         })
         .catch(err => console.log(err)
         );

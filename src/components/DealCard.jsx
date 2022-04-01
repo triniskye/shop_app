@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const MenuCard=(props)=>{
+const DealCard=(props)=>{
     function handleView(){
         props.changeId(props.item.id)
         console.log(props.item.id)
@@ -11,7 +11,7 @@ const MenuCard=(props)=>{
     return(
         <div>
             
-            <div className="menuCard" style={{backgroundColor : "rgb(184, 63, 93)", borderRadius: "15%"}}>
+            <div className="dealCard">
                
                 <p>{props.item.title}</p>
                 <p>${props.item.price}</p>
@@ -27,4 +27,4 @@ const MenuCard=(props)=>{
     );
 }
 
-export default MenuCard;
+export default DealCard;

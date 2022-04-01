@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import '../stylesheets/App.css';
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, useNavigate, Route, Routes} from "react-router-dom";
 import Home from '../components/Home';
 import Menu from '../components/Menu';
 import Contact from '../components/Contact';
@@ -12,9 +12,9 @@ import NavBar from '../components/NavBar';
 
 
 function App() {
-const [loggedIn, setLoggedIn] = useState(false)
-const [user, setUser] = useState([])
-console.log("hello")
+const [loggedIn, setLoggedIn] = useState(false);
+const [user, setUser] = useState([]);
+
 
 function setNewUser(newUserArr){
   setUser(newUserArr.user);
@@ -29,17 +29,31 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
+  deleteFromStorage();
   window.localStorage.setItem('my_app_user', JSON.stringify(user));
-  console.log("updated state", user)
+  console.log("updated state", user);
 }, [user]);
- 
 
+
+function deleteFromStorage(){
+  window.localStorage.removeItem('my_app_user')
+}
+function setJwtToken(token) {
+  sessionStorage.setItem("jwt", token)
+}
+function getJwtToken() {
+  return sessionStorage.getItem("jwt")
+}
+const jwtToken = getJwtToken();
+if (!jwtToken) {
+  console.log("/login")
+}
   return (
     <div className="App">
  
       <div className="App-content">
       <div className="nav">
-        <NavBar user={user}/>
+        <NavBar/>
       </div>
         <Router> 
 
@@ -51,13 +65,13 @@ useEffect(() => {
 
             <Route path="/contact" element={<Contact/>}/>
 
-            <Route path="/signup" element={<Signup setNewUser = {setNewUser} />}/>
+            <Route path="/signup" element={<Signup setToken = {setJwtToken} setNewUser = {setNewUser} />}/>
 
-            <Route path="/login" element={<Login setNewUser = {setNewUser} />}/>
+            <Route path="/login" element={<Login setToken = {setJwtToken} setNewUser = {setNewUser} />}/>
 
-            <Route exact path="/about" element={<About/>}/>
+            <Route exact path="/about" element={<About />}/>
 
-            <Route path="/account" element={<Account user={user}/>}/>
+            <Route path="/account" element={<Account getToken={getJwtToken} setNewUser = {setNewUser} clearStorage = {deleteFromStorage} user={user} loggedIn = {loggedIn}/>}/>
 
 
           </Routes>

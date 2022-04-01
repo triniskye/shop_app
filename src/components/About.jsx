@@ -28,7 +28,7 @@ export default function About(){
         }
         else if(str1 > str2){
             return(
-                <p><span style={{color: "red"}}>We are currently closed!</span><span><Clock format={'HH:mm:ss'} ticking={true} timezone={'Australia/Brisbane'} /></span></p>
+                <p><span style={{color: "red"}}>We are currently closed! </span><span><Clock format={'HH:mm:ss'} ticking={true} timezone={'Australia/Brisbane'} /></span></p>
             ) 
         }
         else{

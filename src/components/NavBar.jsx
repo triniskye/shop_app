@@ -7,7 +7,7 @@ function NavBar(){
         <div>
             <Navbar style={{backgroundColor: "rgb(248, 242, 232)"}} expand="lg">
                 <Container style={{width: "90vw"}}>
-                    <Navbar.Brand style={{ cursor: "default", color: "rgb(102, 7, 47)", fontSize: "1.25vw"}}>Open 7 Days</Navbar.Brand>
+                    <Navbar.Brand style={{ cursor: "default", color: "rgb(102, 7, 47)", fontSize: "1.5vw"}}>Open 7 Days</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

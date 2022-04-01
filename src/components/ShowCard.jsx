@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Modal, Button} from 'react-bootstrap';
 
-const Show = (props) => {
+const ShowCard = (props) => {
     const [item, setItem] = useState({})
     useEffect(()=>{
         fetch(`http://localhost:5000/menu_items/${props.id}`)
@@ -30,4 +30,4 @@ const Show = (props) => {
   )
 }
 
-export default Show;
+export default ShowCard;

@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from "react";
 import MenuCard from "./MenuCard";
-import Show from "./Show";
+import ShowCard from "./ShowCard";
+import Scroll from "./Scroll";
 
 
 
-function Menu(){
+function Menu(props){
 
     const [items, setItems] = useState([]);
     const [viewModal, setViewModal] = useState(false);
@@ -111,7 +112,8 @@ function Menu(){
         
         <div>
             <h1 className="title">Menu</h1>
-            {viewModal ?<Show viewModal={viewModal} id={id} toggle={toggle}/>: <></>}
+            <Scroll>
+            {viewModal ?<ShowCard viewModal={viewModal} id={id} toggle={toggle}/>: <></>}
             {/* burgers */}
             <h2 className="title-left">Burgers <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/hamburger_1f354.png"/></h2>
             <div className="cardsArea">
@@ -152,6 +154,7 @@ function Menu(){
             <div className="cardsArea">
             {items.length > 0 ? mealDealCards : <>Loading...</>}
             </div>
+            </Scroll>
         </div>
     );
 }
