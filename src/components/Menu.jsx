@@ -25,7 +25,7 @@ function Menu(props){
       case "burger":
         return (
           <div key={item.id}>
-            <MenuCard item={item} toggle={toggle} changeId={changeId}/>
+            <MenuCard getToken={props.getToken} item={item} toggle={toggle} changeId={changeId}/>
           </div>
         )      
     }
@@ -35,7 +35,7 @@ function Menu(props){
       case "roll":
         return (
           <div key={item.id}>
-            <MenuCard item={item} toggle={toggle} changeId={changeId}/>
+            <MenuCard getToken={props.getToken} item={item} toggle={toggle} changeId={changeId}/>
           </div>
         )      
     }
@@ -45,7 +45,7 @@ function Menu(props){
       case "hot_box":
         return (
           <div key={item.id}>
-            <MenuCard item={item} toggle={toggle} changeId={changeId}/>
+            <MenuCard getToken={props.getToken} item={item} toggle={toggle} changeId={changeId}/>
           </div>
         )      
     }
@@ -55,7 +55,7 @@ function Menu(props){
       case "fish":
         return (
           <div key={item.id}>
-            <MenuCard item={item} toggle={toggle} changeId={changeId}/>
+            <MenuCard getToken={props.getToken} item={item} toggle={toggle} changeId={changeId}/>
           </div>
         )      
     }
@@ -65,7 +65,7 @@ function Menu(props){
       case "kids_meal":
         return (
           <div key={item.id}>
-            <MenuCard item={item} toggle={toggle} changeId={changeId}/>
+            <MenuCard getToken={props.getToken} item={item} toggle={toggle} changeId={changeId}/>
           </div>
         )      
     }
@@ -75,7 +75,7 @@ function Menu(props){
       case "meal_deal":
         return (
           <div key={item.id}>
-            <MenuCard item={item} toggle={toggle} changeId={changeId}/>
+            <MenuCard getToken={props.getToken} item={item} toggle={toggle} changeId={changeId}/>
           </div>
         )      
     }
@@ -85,7 +85,7 @@ function Menu(props){
       case "chicken":
         return (
           <div key={item.id}>
-            <MenuCard item={item} toggle={toggle} changeId={changeId}/>
+            <MenuCard getToken={props.getToken} item={item} toggle={toggle} changeId={changeId}/>
           </div>
         )      
     }
@@ -95,7 +95,7 @@ function Menu(props){
       case "chips":
         return (
           <div key={item.id}>
-            <MenuCard item={item} toggle={toggle} changeId={changeId}/>
+            <MenuCard getToken={props.getToken} item={item} toggle={toggle} changeId={changeId}/>
           </div>
         )      
     }
@@ -112,7 +112,7 @@ function Menu(props){
         
         <div>
             <h1 className="title">Menu</h1>
-            <Scroll>
+            <Scroll height={70}>
             {viewModal ?<ShowCard viewModal={viewModal} id={id} toggle={toggle}/>: <></>}
             {/* burgers */}
             <h2 className="title-left">Burgers <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/hamburger_1f354.png"/></h2>

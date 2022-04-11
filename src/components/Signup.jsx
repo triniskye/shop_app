@@ -22,17 +22,26 @@ const Signup = (props) => {
         }),
         headers: { "Content-type": "application/json; charset=UTF-8" }
     })
-        .then(response => response.json())
+    .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        else{
+            throw new Error('Something went wrong');
+        }
+        
+      })
         .then((json) => {
             console.log(json);
             props.setNewUser(json);
             props.setToken(json.jwt);
+            console.log("success")
+            navigate('/');
         })
         .catch(err => console.log(err)
         );
 
-        console.log("success")
-        navigate('/');
+
     }
     function handleFName(e) {
         setFName(e.target.value)

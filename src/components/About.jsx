@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Clock from 'react-live-clock';
+import image from "../sources/facebook.PNG";
 
 
 export default function About(){
@@ -43,11 +44,18 @@ export default function About(){
             <h1 className="title">About</h1>
             <div className="aboutContent">
                 <div className="aboutDetails">
+                    <div style={{gridColumnStart: "1"}}>
                     <h2>Hours:</h2><br/>
                     <p>Mon-Fri 6am-6pm | Kitchen: 6am-5:45pm</p>
                     <p>Sat-Sun 6am-1pm | Kitchen: 6am-12:45pm</p>
                     {storeStatus(str1, str2)}
+                    </div>
+                    <div style={{gridColumnStart:"2"}}>
+                    <img style={{width:"80%"}} src={image} alt="facebook-snippet"/>
+                    <h1 style={{marginTop:"1.5vw", fontSize:"1.5vw"}}>Check out our Facebook <a href="https://www.facebook.com/pages/category/Shopping---retail/Harrisville-News-General-Store-1566869643342901/">HERE!</a></h1>
+                    </div>
                 </div>
+                
             </div>
         </div>
     )

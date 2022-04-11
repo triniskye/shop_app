@@ -75,16 +75,20 @@ html{
 }
 
 .menuCard{
-  margin: 0.5vw;
+  margin: 1vw;
   font-size: 1vw;
   font-weight: bold;
   padding-top: 2vw;
   color: aliceblue ;
   width: 18vw;
-  height: 12vw;
+  line-height: 1.5vw;
+  height: fit-content;
+  max-height: fit-content;
   box-shadow: 0.5vw 0.5vw 0.5vw rgb(97, 97, 100);
   border-style: solid;
   border-color: wheat;
+
+
 }
 .menuCard:hover{
   animation: grow 1.5s infinite linear;
@@ -124,7 +128,7 @@ html{
   width: fit-content;
   padding: 1.5vw;
   /* box-shadow: 4px -4px 15px 0px #ff1f8f, 12px -11px 7px 0px #FF9376, 20px -5px 7px 0px #FFE264, 20px 6px 7px 0px #F6FF33, 13px 12px 17px 0px #FF9527, 2px 17px 17px 0px #FF0000, -9px 21px 18px 0px #FFF212, -9px 6px 11px 0px #FF0808, -11px -9px 11px 0px #FFFA17, -11px -9px 11px 0px #FFFA17, 5px 5px 15px 5px rgba(0,0,0,0); */
-  box-shadow: 0.5vw 0.5vw 1vw 1vw#ffffff56;
+  box-shadow: 0.5vw 0.5vw 1vw 1vw #ffffff56;
 }
 @keyframes rotate {
   to {
@@ -145,9 +149,20 @@ html{
   border-radius: 15px;
   padding-left: 1.5vw;
   padding-right: 1.5vw;
-  border-style: none;
+  border-style: solid;
+  border-color: #202020;
   align-self: center;
   background-color:rgb(240, 194, 208);
+}
+.cartButton{
+  border-radius: 15px;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  border-style: solid;
+  border-color: #ffffff;
+  color: #ffffff;
+  align-self: center;
+  background-color:rgb(88, 88, 89);
 }
 input{
   width: 30vw;
@@ -157,12 +172,11 @@ input{
   display: grid;
   grid-template-columns: 50vw 50vw;
 }
-.aboutContent{
+.aboutDetails{
+  margin-top: 4vw;
+  font-size: 1.5vw;
   display: grid;
   grid-template-columns: 50vw 50vw;
-}
-.aboutDetails{
-  font-size: 1.5vw;
 }
 
 .contactDetails{
@@ -219,4 +233,68 @@ input{
   100%{
     box-shadow: 0.5vw 0.5vw 0.5vw rgb(97, 97, 100);
   }
+}
+.scroll::-webkit-scrollbar {
+  display: block;
+  width: 1vw;
+
+}
+.scroll::-webkit-scrollbar-track {
+  background-color: #b18e8e;
+  margin-top: -200px;
+  margin-bottom: -100px;
+
+}
+  
+.scroll::-webkit-scrollbar-thumb {
+  background-color: rgb(248, 76, 116);
+  border-style: solid;
+  border-color: rgb(239, 162, 207);
+}
+
+.scroll::-webkit-scrollbar-track-piece:end {
+  background-color:rgb(240, 182, 211);
+}
+
+.scroll::-webkit-scrollbar-track-piece:start {
+  background-color: rgb(240, 182, 211);
+}
+.cart{
+  display: grid;
+  grid-template-columns: 33.33vw 33.33vw 33.33vw;
+
+}
+.cart-title{
+
+  display: grid;
+  grid-template-columns: 33.33vw 33.33vw 33.33vw;
+
+}
+.cartCard{
+  background-color: #ffffff;
+  color: #202020;
+  grid-column-start: 2;
+  margin-top: 2vw;
+
+
+}
+.cartItemCard{
+  border-top: 0.05vw solid black;
+  padding: 1vw;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  font-size: 1.1vw;
+
+}
+.continueShoppingButton{
+  background-color: transparent;
+  border-style: solid;
+  border-color: wheat;
+  color: wheat;
+  width: fit-content;
+  height: fit-content;
+  padding: 1vw;
+  margin: 1.5vw;
+  grid-column-start: 1;
+  grid-row-start: 1;
 }

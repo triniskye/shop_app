@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap";
+import {useSelector} from "react-redux";
+
 
 function NavBar(){ 
-
+    const cartQuantity = useSelector((state)=> state.cart.totalQuantity)
     return (
         <div>
             <Navbar style={{backgroundColor: "rgb(248, 242, 232)"}} expand="lg">
@@ -18,9 +20,12 @@ function NavBar(){
                             <NavDropdown title="Account" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/account" style={{fontSize: "1.25vw"}}>Overview</NavDropdown.Item>
                             </NavDropdown>
+                            
                         </Nav>
+                        
                     </Navbar.Collapse>
                 </Container>
+                <Nav.Link href="/cart" style={{fontSize:"2vw"}}>🛒{cartQuantity}</Nav.Link>
             </Navbar>
         </div>
 

@@ -9,9 +9,17 @@ const Account = (props) => {
   let firstName = "";
   let lastName = "";
   let user = false;
-
+  const token = props.getToken();
+  useEffect(()=>{
+    if(token === null){
+      refreshPage();
+    }
+    else{
+      console.log("token exists")
+    }
+  },[token])
   function refreshPage(){
-    window.location.reload(false);
+    window.location.reload(true);
   }
   if (props.user.email != null) {
     firstName = props.user.first_name;
